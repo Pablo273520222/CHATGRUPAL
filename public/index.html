@@ -1,0 +1,128 @@
+<html lang="en">
+
+<head>
+    <title>Node Chat</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Node Chat">
+    <meta name="keywords" content="Node Chat">
+    <meta name="author" content="Pedro Henrique Arthur">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="./assets/img/bb.png" />
+    <link rel="manifest" href="/manifest.webmanifest">
+    <!-- <link href="./assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />-->
+    <link href="./assets/css/chat.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="./assets/bootstrap/js/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="./assets/bootstrap/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="./assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./assets/js/socket.io.js"></script>
+    <script src="./assets/js/chat.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css"
+        integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+
+<body class="well">
+
+    <div class="container-fluid" style="overflow-y: auto;">
+
+        <div class="row">
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="sticky-top">
+                            <ul class="list-group text-center" id="onlineList">
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-9">
+                <div id="chatArea">
+                    <ul class="chat">
+                    </ul>
+                </div>
+
+                <div id="ContainerDiv">
+                    <div id="TheBelowDiv">
+                        <div>
+                            <p id="typing"></p>
+                        </div>
+                        <div class="input-group" id="msgGrp">
+                            <input type="text" class="form-control" placeholder="Enter your message here..." id="msg"
+                                onkeypress="typeMsg(); return sendEnterMessage(event);">
+                            <div class="input-group-append">
+                                <a class="btn btn-primary" id="msgBtn" onclick="sendMessage();">Send <i
+                                        class="fas fa-sign-out-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="modal" tabindex="-1" role="dialog" id="enterModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-door-open"></i> Welcome to the Webchat!</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">@</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                            aria-describedby="basic-addon1" id="username">
+                    </div>
+                    <br />
+                    <p><i class="fas fa-info-circle"></i><small> This is a Webchat written in javascript (client/server
+                            side). You can find the source code <a href="https://github.com/pedrohma95/nodeChat"
+                                target="_blank">here</a>.</small></p>
+
+                    <div class="alert alert-danger" role="alert" id="loginErrorDiv">
+                        <div style="display: table;">
+                            <span><i class="fas fa-exclamation-triangle"></i></span>
+                            <span id="loginErrorMsg"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" onclick="enterChat();">Join <i
+                            class="fas fa-sign-in-alt"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" tabindex="-1" role="dialog" id="mobListMod">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul class="list-group text-center" id="onlineListMob">
+
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

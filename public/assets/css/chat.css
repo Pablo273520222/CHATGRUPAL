@@ -1,0 +1,189 @@
+ul {
+    list-style: none;
+    word-wrap: break-word;
+}
+
+#chatArea {
+    height: 100%;
+    padding-bottom: 60px;
+}
+
+#ContainerDiv {
+    margin: auto;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+#TheBelowDiv {
+    font-size: 18pt;
+    font-family: Tahoma;
+    text-align: center;
+    color: white;
+}
+
+#messages {
+    height: auto;
+}
+
+.chat {
+    height: 100%;
+    padding: 10px 20px 10px 20px;
+    overflow-y: auto;
+    margin: 0;
+}
+
+.chat li.left {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #B3A9A9;
+}
+
+.chat li.right {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #B3A9A9;
+}
+
+.chat li.left .chat-body {
+    margin-right: 20px;
+    text-align: right;
+}
+
+.chat li.right .chat-body {
+    text-align: left;
+}
+
+.sender {
+    color: green;
+}
+
+.receiver {
+    color: #4383cc;
+}
+
+.chat li .chat-body p {
+    margin: 0;
+    color: #777777;
+}
+
+.panel .slidedown .glyphicon, .chat .glyphicon {
+    margin-right: 5px;
+}
+
+.panel-body {
+    overflow-y: scroll;
+    height: 250px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: rgb(166, 195, 214);
+}
+
+#typing {
+    font-size: 12pt;
+    font-style: italic;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: black;
+    float: right;
+}
+
+.chat>.li {
+    margin-top: 10px;
+    bottom: 0;
+}
+
+li:last-child {
+    margin-bottom: 50px;
+}
+
+.fa-info-circle {
+    color: #00a6e5;
+}
+
+.fa-door-open{
+    color: #cea878;
+}
+
+.time-chat{
+    font-size: 8pt;
+}
+
+/* Extra small devices (phones, 600px and down) */
+
+@media only screen and (max-width: 800px) {
+    #onlineList>li.obc {
+        display: none;
+    }
+    #onlineList {
+        margin-bottom: 10px;
+        position: fixed;
+        width: 100%;
+        left: 0;
+    }
+    #titleAnchor:hover {
+        text-decoration: underline;
+    }
+    #titleAnchor {
+        color: #33ccff;
+        cursor: pointer;
+    }
+    .displ {
+        display: table;
+    }
+    .chat li:last-child {
+        margin-bottom: 10px;
+    }
+    .chat li:first-child {
+        margin-top: 60px;
+    }
+    .chat li.left .chat-body {
+        margin-right: 20px;
+        text-align: right;
+        right: 0;
+        left: 0;
+        width: 100%;
+    }
+    .chat li.right .chat-body {
+        text-align: left;
+        right: 0;
+        left: 0;
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    #titleAnchor:hover {
+        text-decoration: none;
+    }
+    #titleAnchor {
+        color: black;
+        cursor: auto;
+    }
+}
+
+#loginErrorMsg {
+    float: right;
+    margin-left: 10px;
+}
+
+.fa-exclamation-triangle {
+    float: left;
+}
+
+#titleList {
+    margin-left: 10px;
+}
